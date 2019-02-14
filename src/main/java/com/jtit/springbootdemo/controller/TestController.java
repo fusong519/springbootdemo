@@ -1,7 +1,10 @@
 package com.jtit.springbootdemo.controller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * @Author: 15892
@@ -11,12 +14,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping(value = "/book")
 public class TestController {
+    Logger logger = LoggerFactory.getLogger(getClass());
     @RequestMapping("/hello")
+    @ResponseBody
     public String hello(){
-        return "test";
+        return "中文";
     }
-    @RequestMapping("/test")
+    @RequestMapping("/login")
+    @ResponseBody
     public String test(){
-        return "hellssodd";
+        logger.info("登录成功");
+        return "登录成功";
     }
 }
