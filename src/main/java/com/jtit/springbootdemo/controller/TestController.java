@@ -23,7 +23,7 @@ public class TestController {
     @RequestMapping("/login")
     @ResponseBody
     public String test(){
-        logger.info("登录成功");
+        logger.info("  登录成功");
         return "登录成功";
     }
 }
